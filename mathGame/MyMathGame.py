@@ -6,4 +6,4 @@ if a.isdigit():
     else:
         print("błąd! Poprawna odpowiedź to " + str(prawidlowa))
 else:
-    print("błąd podana odpowiedź nie jest liczbą!")
+    print("błąd podana odpowiedź nie jest liczbą, podaj liczbę!")
