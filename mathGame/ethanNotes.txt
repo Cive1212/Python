@@ -1,0 +1,25 @@
+1. indexy sobie pobierz jakąś funkcją, robienie tego ręcznie nie ma sensu - nie będę psuł zabawy, znajdź jak to zrobić ;>
+
+
+2. zmienna i=0 nie jest potrzebna. python nie potrzebuje deklarowania, ona jest tylko do iterowania po pętli for
+
+3. wychodzenie z pętli while możesz zrobić inaczej. ja bym na Twoim miejscu pozwolił na 3 próby i po 3 "błędnych" bym uznał za złą odpowiedź i nie dał punktu, zmień X na coś innego i ustawiaj ją przed wejściem do pętli
+
+4. upewnij się czy wiesz ile wykonuje się pętla używając generatora range() i zrób sobie zmienną na górze np. "liczba_pytan" i z niej korzystaj.?
+
+
+5. nrpytania nie powinien być indeksem tablicy indexy, a wartością spod tego indeksu
+
+
+6. ta pętla while niech pobiera tylko odpowiedź, nie sprawdzaj w niej poprawności odpowiedzi
+
+indexy.pop(nrpytania) <- tutaj docelowo nie powinien być nrpytania, a indeks z tablicy indexy, czyli to co u Ciebie jest w nrpytania
+
+
+Jeśli jednak chcesz też tekstowe odpowiedzi, to proponuję zmienić listę odpowiedzi na tekstową i wyjebanie testu "isdigit". poza tym będziesz musiał trochę wyczyścić wpisaną przez użyttkownika odpowiedź - żeby problemem nie była wielkość liter, podwójne spacje i inne znaki białe, a poza tym warto uzbroić się w to, że użytkownik może odpowiedź w różny sposób. czasami z myślnikiem czasami ze spacją.
+np.
+Jak się nazywa popularny protokół sieci bezprzewodowych?
+"wifi", "wi-fi", "wi fi"
+
+
+zrobic mozliwosc sprobowania przejscia quizu ponownie(poprawienie wyniku)
