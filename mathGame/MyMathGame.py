@@ -26,11 +26,9 @@ while i < 4:
             print("poprawna odpowiedź!")
             punkty += 1
             i += 1
-            nrpytania += 1
         else:
             print("błąd! Poprawna odpowiedź to " + str(odpowiedzi[nrpytania]))
             i += 1
-            nrpytania += 1
     else:
         print("błąd podana odpowiedź nie jest liczbą, podaj liczbę!")
         enter = 1
