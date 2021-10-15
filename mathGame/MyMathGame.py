@@ -1,42 +1,25 @@
-pytania = ["9 * 9=? ", "15 + 10=? ", "50 - 17=? ", "10 * 9= ?", "8 + 6=? ", "5 * 5=? ", "4 * 4=? ", "4 * 9= ?", "6 * 6=? ", "10:2=? "]
-odpowiedzi = [81, 25, 33, 90, 14, 25, 16, 36, 36, 5]
-i = 0
+import random
+lista = [["9 * 9=? ", 81], ["15 + 10=? ", 25], ["50 - 17=? ", 33], ["10 * 9= ?", 90], ["8 + 6=? ", 14], ["5 * 5=? ", 25], ["4 * 4=? ", 16], ["4 * 9= ? ", 36], ["6 * 6=? ", 36],
+["10:2=? ", 5]]
+indexy = list(range(0,len(lista)))
 punkty = 0
-nrpytania = 0
-uzytepytania = []
-restart = 0
-enter = 0
-from random import randrange
-while i < 4:
-    if enter != 1:
-        nrpytania = randrange(0, 10)
-    else:
-        enter = 0
-    if len(uzytepytania) >= 1:
-        for x in uzytepytania:
-            if nrpytania == x:
-                restart = 1
-    if restart == 1:
-        restart = 0
-        continue
-    uzytepytania.append(nrpytania)
-    odpowiedz = input(pytania[nrpytania])
-    if odpowiedz.isdigit():
-        if float(odpowiedz) == odpowiedzi[nrpytania]:
-            print("poprawna odpowiedź!")
-            punkty += 1
-            i += 1
+for i in range(4):
+    nrpytania = random.choice(indexy)
+    indexy.pop(indexy.index(nrpytania))
+    x = 0
+    while x < 1:
+        odpowiedz = input(lista[nrpytania][0])
+        if odpowiedz.isdigit():
+            x += 1
         else:
-            print("błąd! Poprawna odpowiedź to " + str(odpowiedzi[nrpytania]))
-            i += 1
+            print("błąd podana odpowiedź nie jest liczbą, podaj liczbę!")
+    if int(odpowiedz) == lista[nrpytania][1]:
+        print("poprawna odpowiedź!")
+        punkty += 1
     else:
-        print("błąd podana odpowiedź nie jest liczbą, podaj liczbę!")
-        enter = 1
-        uzytepytania.pop()
-
+        print("błąd! Poprawna odpowiedź to " + str(lista[nrpytania][1]))
 print("uzyskałeś " + str(punkty) + " punktów")
 if float(punkty) > 2:
     print("gratulacje zdałeś egzamin!!!!!!")
 else:
     print("niestety nie udało ci się zdać. Wróć w sierpniu!")
-print(uzytepytania)
