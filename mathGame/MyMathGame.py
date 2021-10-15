@@ -4,11 +4,21 @@ i = 0
 punkty = 0
 nrpytania = 0
 uzytepytania = []
+restart = 0
+enter = 0
 from random import randrange
 while i < 4:
-    nrpytania = randrange(0, 10)
-  #  if nrpytania == nrpoprzpytania:
-   #     continue
+    if enter != 1:
+        nrpytania = randrange(0, 10)
+    else:
+        enter = 0
+    if len(uzytepytania) >= 1:
+        for x in uzytepytania:
+            if nrpytania == x:
+                restart = 1
+    if restart == 1:
+        restart = 0
+        continue
     uzytepytania.append(nrpytania)
     odpowiedz = input(pytania[nrpytania])
     if odpowiedz.isdigit():
@@ -23,6 +33,9 @@ while i < 4:
             nrpytania += 1
     else:
         print("błąd podana odpowiedź nie jest liczbą, podaj liczbę!")
+        enter = 1
+        uzytepytania.pop()
+
 print("uzyskałeś " + str(punkty) + " punktów")
 if float(punkty) > 2:
     print("gratulacje zdałeś egzamin!!!!!!")
