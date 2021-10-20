@@ -54,8 +54,8 @@ print("wybierz quiz z listy wpisując jego numer")
         
 
 for z in range(2):
-    odpowiedz = intro()
     while True:
+        odpowiedz = intro()
         if odpowiedz == 1:
             quizy.pop(odpowiedz - 1)
             mathQuiz()
