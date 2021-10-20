@@ -5,13 +5,18 @@ indexy = list(range(0,len(lista)))
 quizy = list(range(1,5))
 punkty = 0
 
+
+
+
 def intCheck(x):
     while True:
-            odpowiedz = input(x)
-            if odpowiedz.isdigit():
-                return int(odpowiedz)
-            else:
-                print("błąd podana odpowiedź nie jest liczbą, podaj liczbę!")
+        odpowiedz = input(x)
+        if odpowiedz.isdigit():
+            return int(odpowiedz)
+        else:
+            print("błąd podana odpowiedź nie jest liczbą, podaj liczbę!")
+
+
 
 def intro():
     checked = 0
@@ -26,6 +31,19 @@ def intro():
         else:
             print ("Quiz nie istnieje, bądź już go rozwiązałeś! wybierz inny quiz z listy!")
     return odpowiedz
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def mathQuiz():
@@ -50,8 +68,6 @@ def engQuiz():
     print("jestem testem z angielskiego")
 print("Witaj Użytkowniku!")
 print("wybierz quiz z listy wpisując jego numer")
-
-        
 
 for z in range(2):
     while True:

@@ -1,25 +1,59 @@
-1. indexy sobie pobierz jakąś funkcją, robienie tego ręcznie nie ma sensu - nie będę psuł zabawy, znajdź jak to zrobić ;>
 
 
-2. zmienna i=0 nie jest potrzebna. python nie potrzebuje deklarowania, ona jest tylko do iterowania po pętli for
+nazwa funkcji intCheck brzmi jak sprawdzenie, a pobiera wartości z wejścia - popraw nazewnictwo
+Ethann
+Łukasz Fąfara
+utrzymuj spójny język, albo piszesz po pl zmienne albo po ang 😛
 
-3. wychodzenie z pętli while możesz zrobić inaczej. ja bym na Twoim miejscu pozwolił na 3 próby i po 3 "błędnych" bym uznał za złą odpowiedź i nie dał punktu, zmień X na coś innego i ustawiaj ją przed wejściem do pętli
-
-4. upewnij się czy wiesz ile wykonuje się pętla używając generatora range() i zrób sobie zmienną na górze np. "liczba_pytan" i z niej korzystaj.?
-
-
-5. nrpytania nie powinien być indeksem tablicy indexy, a wartością spod tego indeksu
-
-
-6. ta pętla while niech pobiera tylko odpowiedź, nie sprawdzaj w niej poprawności odpowiedzi
-
-indexy.pop(nrpytania) <- tutaj docelowo nie powinien być nrpytania, a indeks z tablicy indexy, czyli to co u Ciebie jest w nrpytania
-
-
-Jeśli jednak chcesz też tekstowe odpowiedzi, to proponuję zmienić listę odpowiedzi na tekstową i wyjebanie testu "isdigit". poza tym będziesz musiał trochę wyczyścić wpisaną przez użyttkownika odpowiedź - żeby problemem nie była wielkość liter, podwójne spacje i inne znaki białe, a poza tym warto uzbroić się w to, że użytkownik może odpowiedź w różny sposób. czasami z myślnikiem czasami ze spacją.
-np.
-Jak się nazywa popularny protokół sieci bezprzewodowych?
-"wifi", "wi-fi", "wi fi"
+nie przekraczaj pewnych długości linii
+Ethann
+druga linijka jest za długa :q
+Ethann
+prawie 180 znaków
+Ethann
+tak ze 120 myślę, że obecnie jest ok
+Ethann
+Łukasz Fąfara
+niektórzy są fanami 80, ale imho to już nie czasy terminal-only i każdy ma panoramiczny monitor
 
 
-zrobic mozliwosc sprobowania przejscia quizu ponownie(poprawienie wyniku)
+linia 56 - po co tam jest for z? i dlaczego każda pętla ma inną literkę xD
+
+I bym zrobił enter po imporcie dla oddzielenia xD
+
+baze danych popraw
+Ethann
+masz osobno quizy i osobno lista
+Ethann
+obecnie zachowanie jest takie, że jak odpalisz apkę to on pozwoli wpisać 3, 4, 5 i powie "podaj poprawny numer quizu"
+Ethann
+a każda inna wartość poza 1,2 zwróci "Quiz nie istnieje, bądź już go rozwiązałeś! wybierz inny quiz z listy!"
+Ethann
+Łukasz Fąfara
+zamiast "lista" zrób sobie jakąś zmienną typu quizy właśnie.
+zrób tam listę quizów w środku z nazwą i pytaniami
+
+
+quizy = [
+{'nazwa': 'matematyka', 'pytania': [...]},
+{'nazwa': 'angielski', 'pytania': [...]}
+]
+Ethann
+Łukasz Fąfara
+później machnij sobie pętle po tym
+
+for numer, quiz in enumerate(quizy):
+  print(f"{numer+1}. {quiz['nazwa']}")
+
+  intCheck("Wybierz:")
+
+  + sposób nazewnictwa
+Graff
+Kamil Leśniak
+Używaj camela pascala lub snejka
+Ethann
+Łukasz Fąfara
+liczbę pytań zadanych w quizie dodaj do konfiguracji quizu i próg zdawalności quizu też i zrób go procentowym
+Graff
+Kamil Leśniak
+A nie rób zmiennej nrpytania
