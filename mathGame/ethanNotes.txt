@@ -1,33 +1,7 @@
 
-
-nazwa funkcji intCheck brzmi jak sprawdzenie, a pobiera wartości z wejścia - popraw nazewnictwo
-Ethann
-Łukasz Fąfara
-utrzymuj spójny język, albo piszesz po pl zmienne albo po ang 😛
-
-nie przekraczaj pewnych długości linii
-Ethann
-druga linijka jest za długa :q
-Ethann
-prawie 180 znaków
-Ethann
-tak ze 120 myślę, że obecnie jest ok
-Ethann
-Łukasz Fąfara
-niektórzy są fanami 80, ale imho to już nie czasy terminal-only i każdy ma panoramiczny monitor
-
-
-linia 56 - po co tam jest for z? i dlaczego każda pętla ma inną literkę xD
-
-I bym zrobił enter po imporcie dla oddzielenia xD
-
 baze danych popraw
 Ethann
 masz osobno quizy i osobno lista
-Ethann
-obecnie zachowanie jest takie, że jak odpalisz apkę to on pozwoli wpisać 3, 4, 5 i powie "podaj poprawny numer quizu"
-Ethann
-a każda inna wartość poza 1,2 zwróci "Quiz nie istnieje, bądź już go rozwiązałeś! wybierz inny quiz z listy!"
 Ethann
 Łukasz Fąfara
 zamiast "lista" zrób sobie jakąś zmienną typu quizy właśnie.
