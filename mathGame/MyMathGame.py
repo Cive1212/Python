@@ -29,10 +29,11 @@ engList =   [
 myList["math"] = mathList
 myList["eng"] = engList
 indexes = [list(range(0,len(myList["math"]))), list(range(0,len(myList["eng"])))]
-quizes = list(range(1,5))
 points = 0
 pointsM = -1
 pointsA = -1
+pointsP = -1
+pointsH = -1
 def verifyNumber(x):
     while True:
         answer = input(x)
@@ -53,12 +54,7 @@ def mathQuiz():
         else:
             print("błąd! Poprawna odpowiedź to " + str(myList["math"][questionNumber][1]))
     print("uzyskałeś " + str(pointsM) + " punktów")
-    if float(pointsM) > 2:
-        print("gratulacje zdałeś egzamin!!!!!!")
-    else:
-        print("niestety nie udało ci się zdać. Wróć w sierpniu!")
     return pointsM
-
 def engQuiz():
     pointsA = 0
     for i in range(4):
@@ -71,19 +67,16 @@ def engQuiz():
         else:
             print("błąd! Poprawna odpowiedź to " + str(myList["eng"][questionNumber][1]))
     print("uzyskałeś " + str(pointsA) + " punktów")
-    if float(pointsA) > 2:
-        print("gratulacje zdałeś egzamin!!!!!!")
-    else:
-        print("niestety nie udało ci się zdać. Wróć w sierpniu!")
     return pointsA
-
-
-
 def plQuiz():
+    pointsP = 0
     print("jestem testem z polskiego")
+    return pointsP
 
 def healthQuiz():
+    pointsH =0
     print("jestem testem z żywienia")
+    return pointsH
 print("Witaj Użytkowniku!")
 print("wybierz quiz z listy wpisując jego numer")
 
@@ -105,11 +98,23 @@ for i in range(4):
                 myList["eng"].pop(answer - 1)
                 break
         elif answer == 3:
-            plQuiz()
-            break
+            if pointsP >= 0:
+                print ("ten quiz został już wykonany")
+            else:
+                pointsP = plQuiz()
+                break
         elif answer == 4:
-            healthQuiz()
-            break
+            if pointsH >= 0:
+                print ("ten quiz został już wykonany")
+            else:
+                pointsH = healthQuiz()
+                break
         else:
             print("podaj poprawny numer quizu")
+points = int(pointsM) + int(pointsA) + int(pointsP) + int(pointsH)
 print ("koniec quizów")
+print ("uzyskałeś " +str(points) + "/8 punktow")
+if points >=5:
+    print ("zdałeś egzamin!")
+else:
+    print ("niestety nie udało ci się zdać, wróć w sierpniu")
