@@ -1,28 +1,9 @@
-
-baze danych popraw
-Ethann
-masz osobno quizy i osobno lista
-Ethann
-Łukasz Fąfara
-zamiast "lista" zrób sobie jakąś zmienną typu quizy właśnie.
-zrób tam listę quizów w środku z nazwą i pytaniami
+Cive, weź sobie zrób jedną funkcję quiz, a nie 4 😛 one i tak są takie same.
+Z punktów zrób tablicę zamiast 4 osobne zmienne. 
+Przy pomocy parametrów funkcji steruj wewnątrz funkcji quiz tym, gdzie wrzucisz punkty i skąd będziesz brał pytania.
+To samo na samym dole pliku - masz pętlę z ifami, a mógłbyś to opędzić po prostu pętlą po parametrach jakiegoś słownika/tablicy i wypisać wszystkie quizy.
 
 
-quizy = [
-{'nazwa': 'matematyka', 'pytania': [...]},
-{'nazwa': 'angielski', 'pytania': [...]}
-]
-Ethann
-Łukasz Fąfara
-później machnij sobie pętle po tym
-
-for numer, quiz in enumerate(quizy):
-  print(f"{numer+1}. {quiz['nazwa']}")
-
-  intCheck("Wybierz:")
-
-  + sposób nazewnictwa
-Graff
 Kamil Leśniak
 Używaj camela pascala lub snejka
 Ethann
