@@ -118,3 +118,4 @@ if points >=5:
     print ("zdałeś egzamin!")
 else:
     print ("niestety nie udało ci się zdać, wróć w sierpniu")
+input("press enter to exit")
