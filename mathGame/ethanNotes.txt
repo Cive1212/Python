@@ -12,3 +12,8 @@ liczbę pytań zadanych w quizie dodaj do konfiguracji quizu i próg zdawalnośc
 Graff
 Kamil Leśniak
 A nie rób zmiennej nrpytania
+
+
+
+
+dodac sprawdzenie pytan czy sie nie powtarzaja, bo niechacy wyjebalem!!!!!!!!@!!!!!!!!!!!

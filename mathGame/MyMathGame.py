@@ -57,7 +57,7 @@ points = 0
 
 def generateList(x):
     indexes = []
-    indexes.append(list(range(0,len(myList[x]))))
+    indexes = list(range(0,len(myList[x])))
     return indexes
 
 def verifyNumber(x):
@@ -92,7 +92,7 @@ def quiz(x):
                 print("poprawna odpowiedź!")
                 y += 1
             else:
-                print("błąd! Poprawna odpowiedź to " + str(myList["x"][questionNumber][1]))
+                print("błąd! Poprawna odpowiedź to " + str(myList[x][questionNumber][1]))
 
     print("uzyskałeś " + str(y) + " punktów")
     return y 
@@ -103,10 +103,9 @@ for i in range(4):
 
     while True:
         restart = False
-
+        answer = input("podaj nazwę quizu który chcesz rozwiązać ")
         for i in myList:
-            answer = input("podaj nazwę quizu który chcesz rozwiązać ")
-
+            itemToPop = 0
             if answer.lower() == i:
                 print (list(myList).index(i))
                 points = points + quiz(i)
@@ -117,7 +116,6 @@ for i in range(4):
 
         if itemToPop != 0:
             myList.pop(itemToPop)
-            itemToPop = 0
 
         if restart == True:
             break
