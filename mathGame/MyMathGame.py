@@ -50,9 +50,7 @@ myList["zywienie"] = healthList
 points = 0
 
 def generateList(x):
-    indexes = []
-    indexes = list(range(0,len(myList[x])))
-    return indexes
+    return list(range(0,len(myList[x])))
 
 def verifyNumber(x):
     while True:
