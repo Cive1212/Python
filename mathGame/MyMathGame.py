@@ -49,8 +49,6 @@ myList["polski"] = plList
 myList["zywienie"] = healthList
 points = 0
 
-def generateList(x):
-    return list(range(0,len(myList[x])))
 
 def verifyNumber(x):
     while True:
@@ -63,7 +61,7 @@ def verifyNumber(x):
 
 def quiz(x):
     y = 0
-    indexList = generateList(x)
+    indexList = list(range(0,len(myList[x])))
     for i in range(4):
         questionNumber = random.choice(indexList)
         indexList.pop(indexList.index(questionNumber))
