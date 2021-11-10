@@ -2,7 +2,7 @@ import random
  
 myList = {}
  
-mathList =  [
+mathList = [
                 ["9 * 9=? ", 81],
                 ["15 + 10=? ", 25],
                 ["50 - 17=? ", 33],
@@ -14,7 +14,7 @@ mathList =  [
                 ["6 * 6=? ", 36],
                 ["10:2=? ", 5]
             ]
-engList =   [
+engList = [
                 ["jak jest 'pies' po angielsku? ", "dog"],
                 ["jak jest 'żaba' po angielsku ", "frog"],
                 ["jak są 'drzwi' po angielsku ", "door"],
@@ -25,7 +25,7 @@ engList =   [
                 ["jak jest 'widelec' po angielsku ", "fork"],
                 ["jak jest 'kość' po angielsku ", "bone" ]
             ]
-plList =     [
+plList = [
                 ["czym jest synonim? a. wyrazem podobnym b. wyrazem o przeciwnym znaczeniu c. dlugim wyrazem ", "a"],
                 ["w którym roku odbył się chrzest Polski? a. 1042 b. 966 c.894 d. 1410 ", "b"],
                 ["w którym roku odbyła się bitwa pod Grunwaldem? a. 1240 b. 1410 c.1330 d. 1505 ", "b"],
@@ -33,7 +33,7 @@ plList =     [
                 ["kiedy obchodzimy świeto niepodległości? a. 11.11 b 12. 11 c 07.13 d 09.15 ", "a"], 
                 ["jakie zwierzęta są symbolem białowieskiego parku narodowego? a. żubr b. bizon c. dzięciął d. krokodyl ", "a"],
             ]
-healthList =   [
+healthList = [
                 ["ktore owoce maja duzo witaminy c? a. jabłko b. kiwi c.cytryny d.arbuzy ", "bc"],
                 ["które produkty maja wysoki indeks glikemiczny? a. ryż b. jabłko c.frytki d. płatki owsiane ", "acd"],
                 ["na czym można smażyć? a.olej b.masło c.ocet d.bulion ", "ab"],
@@ -49,7 +49,6 @@ myList["polski"] = plList
 myList["zywienie"] = healthList
 points = 0
 
-
 def verifyNumber(x):
     while True:
         answer = input(x)
@@ -62,18 +61,17 @@ def verifyNumber(x):
 def quiz(x):
     y = 0
     indexList = list(range(0,len(myList[x])))
+
     for i in range(4):
         questionNumber = random.choice(indexList)
         indexList.pop(indexList.index(questionNumber))
 
         if x == "matematyka":
-
             if verifyNumber(myList["matematyka"][questionNumber][0]) == myList["matematyka"][questionNumber][1]:
                 print("poprawna odpowiedź!")
                 y += 1
             else:
                 print("błąd! Poprawna odpowiedź to " + str(myList["matematyka"][questionNumber][1]))
-
         else:
             answer = input(myList[x][questionNumber][0])
             fixed_answer = "".join(filter(str.isalnum, answer))
@@ -88,12 +86,14 @@ def quiz(x):
     return y 
  
 print("Witaj Użytkowniku!")
+
 for i in range(4):
 
     while True:
         restart = False
         print (list(myList))
         answer = input("podaj nazwę quizu który chcesz rozwiązać i upewnij się, że jest poprawna! ")
+
         for i in myList:
             itemToPop = 0
 
