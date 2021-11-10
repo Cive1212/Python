@@ -26,33 +26,27 @@ engList =   [
                 ["jak jest 'kość' po angielsku ", "bone" ]
             ]
 plList =     [
-                ["jak jest 'pies' po angielsku? ", "dog"],
-                ["jak jest 'żaba' po angielsku ", "frog"],
-                ["jak są 'drzwi' po angielsku ", "door"],
-                ["jak jest 'młotek' po angielsku ", "hammer"],
-                ["jak jest 'drzewo' po angielsku ", "tree"], 
-                ["jak jest 'ptak' po angielsku ", "bird"],
-                ["jak jest 'kubek' po angielsku ", "cup"],
-                ["jak jest 'widelec' po angielsku ", "fork"],
-                ["jak jest 'kość' po angielsku ", "bone" ]
+                ["czym jest synonim? a. wyrazem podobnym b. wyrazem o przeciwnym znaczeniu c. dlugim wyrazem ", "a"],
+                ["w którym roku odbył się chrzest Polski? a. 1042 b. 966 c.894 d. 1410 ", "b"],
+                ["w którym roku odbyła się bitwa pod Grunwaldem? a. 1240 b. 1410 c.1330 d. 1505 ", "b"],
+                ["'pies' to: a. rzeczownik b. czasownik c. przymiotnik ", "a"],
+                ["kiedy obchodzimy świeto niepodległości? a. 11.11 b 12. 11 c 07.13 d 09.15 ", "a"], 
+                ["jakie zwierzęta są symbolem białowieskiego parku narodowego? a. żubr b. bizon c. dzięciął d. krokodyl ", "a"],
             ]
 healthList =   [
-                ["jak jest 'pies' po angielsku? ", "dog"],
-                ["jak jest 'żaba' po angielsku ", "frog"],
-                ["jak są 'drzwi' po angielsku ", "door"],
-                ["jak jest 'młotek' po angielsku ", "hammer"],
-                ["jak jest 'drzewo' po angielsku ", "tree"], 
-                ["jak jest 'ptak' po angielsku ", "bird"],
-                ["jak jest 'kubek' po angielsku ", "cup"],
-                ["jak jest 'widelec' po angielsku ", "fork"],
-                ["jak jest 'kość' po angielsku ", "bone" ]
+                ["ktore owoce maja duzo witaminy c? a. jabłko b. kiwi c.cytryny d.arbuzy ", "bc"],
+                ["które produkty maja wysoki indeks glikemiczny? a. ryż b. jabłko c.frytki d. płatki owsiane ", "acd"],
+                ["na czym można smażyć? a.olej b.masło c.ocet d.bulion ", "ab"],
+                ["ktore ryby sa slodkowodne? a. karp b. ukleja c. węgorz d. lin ", "abd"],
+                ["które tłuszcze mają wysoki punkt dymienia? a. masło b. masło klarowane c. olej lniany d. łój  ", "bd"], 
+                ["które z podanych to akcesoria kuchenne? a. salamandra b. wilk c. tygrys d. kot ", "ab"],
+                ["które produkty mają dobry cholesterol? a. frytki b. oliwa z oliwek c. łosoś d. wino ", "bcd"],
             ]
  
-myList["math"] = mathList
-myList["eng"] = engList
+myList["matematyka"] = mathList
+myList["angielski"] = engList
 myList["polski"] = plList
 myList["zywienie"] = healthList
-#indexes = [list(range(0,len(myList["math"]))), list(range(0,len(myList["eng"])))]
 points = 0
 
 def generateList(x):
@@ -71,24 +65,25 @@ def verifyNumber(x):
 
 def quiz(x):
     y = 0
-
+    indexList = generateList(x)
     for i in range(4):
-        indexList = generateList(x)
         questionNumber = random.choice(indexList)
         indexList.pop(indexList.index(questionNumber))
+        print (indexList)
 
-        if x == "math":
+        if x == "matematyka":
 
-            if verifyNumber(myList["math"][questionNumber][0]) == myList["math"][questionNumber][1]:
+            if verifyNumber(myList["matematyka"][questionNumber][0]) == myList["matematyka"][questionNumber][1]:
                 print("poprawna odpowiedź!")
                 y += 1
             else:
-                print("błąd! Poprawna odpowiedź to " + str(myList["math"][questionNumber][1]))
+                print("błąd! Poprawna odpowiedź to " + str(myList["matematyka"][questionNumber][1]))
 
         else:
             answer = input(myList[x][questionNumber][0])
+            fixed_answer = "".join(filter(str.isalnum, answer))
 
-            if answer.lower() == myList[x][questionNumber][1]:
+            if fixed_answer.lower() == myList[x][questionNumber][1]:
                 print("poprawna odpowiedź!")
                 y += 1
             else:
@@ -98,32 +93,31 @@ def quiz(x):
     return y 
  
 print("Witaj Użytkowniku!")
-
 for i in range(4):
 
     while True:
         restart = False
-        answer = input("podaj nazwę quizu który chcesz rozwiązać ")
+        print (list(myList))
+        answer = input("podaj nazwę quizu który chcesz rozwiązać i upewnij się, że jest poprawna! ")
         for i in myList:
             itemToPop = 0
+
             if answer.lower() == i:
-                print (list(myList).index(i))
                 points = points + quiz(i)
                 itemToPop = i
                 restart = True
-            else:
-                print ("podaj poprawną nazwę quizu!")
 
-        if itemToPop != 0:
-            myList.pop(itemToPop)
+            if itemToPop != 0:
+                myList.pop(itemToPop)
+                break
 
         if restart == True:
             break
     
 print ("koniec quizów")
-print ("uzyskałeś " +str(points) + "/8 punktow")
+print ("uzyskałeś " +str(points) + "/16 punktow")
  
-if points >=5:
+if points >=10:
     print ("zdałeś egzamin!")
 else:
     print ("niestety nie udało ci się zdać, wróć w sierpniu")
