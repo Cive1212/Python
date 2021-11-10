@@ -69,7 +69,6 @@ def quiz(x):
     for i in range(4):
         questionNumber = random.choice(indexList)
         indexList.pop(indexList.index(questionNumber))
-        print (indexList)
 
         if x == "matematyka":
 
